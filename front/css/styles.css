@@ -1,0 +1,66 @@
+body {
+    background: rgba(179,194,220,1);
+    background: -moz-linear-gradient(top, rgba(179,194,220,1) 0%, rgba(244,224,187,1) 50%, rgba(171,145,112,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(179,194,220,1)), color-stop(50%, rgba(244,224,187,1)), color-stop(100%, rgba(171,145,112,1)));
+    background: -webkit-linear-gradient(top, rgba(179,194,220,1) 0%, rgba(244,224,187,1) 50%, rgba(171,145,112,1) 100%);
+    background: -o-linear-gradient(top, rgba(179,194,220,1) 0%, rgba(244,224,187,1) 50%, rgba(171,145,112,1) 100%);
+    background: -ms-linear-gradient(top, rgba(179,194,220,1) 0%, rgba(244,224,187,1) 50%, rgba(171,145,112,1) 100%);
+    background: linear-gradient(to bottom, rgba(179,194,220,1) 0%, rgba(244,224,187,1) 50%, rgba(171,145,112,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3c2dc', endColorstr='#ab9170', GradientType=0 );
+    color: #aaa;
+}
+h1{
+    color: #000000;
+}
+h4{
+    color: #aaa;
+    margin: 0 0 0.2em;
+    padding: 0;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+section.wrap_top{
+    background: #ffffff;
+    -moz-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.1); -webkit-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.1); box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    border-bottom: 3em;
+    padding: 2em;
+    margin: 2em 0;
+}
+section.wrap_top .profileImg{
+    position: relative;
+    border-radius: 50%;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+section.wrap_top .cont_personal p{
+    font-weight: 300;
+    font-size: 1em;
+    color: #dd007f;
+}
+section.wrap_cards .cards .cont_card{
+    background: #ffffff;
+    -moz-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.1); -webkit-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.1); box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    border-bottom: 3em;
+    margin-bottom: 2em;
+}
+section.wrap_cards .cards .cont_card .row{
+    padding: 1em 1em 1.5em;
+}
+section.wrap_cards .cards .cont_card .img_card{
+    position: relative;
+}
+section.wrap_cards .cards .cont_card .img_card h2{
+    position: absolute;
+    bottom: 0.3em;
+    left: 0.3em;
+    color: #ffffff;
+    font-size: 1.5em;
+}
+section.wrap_cards .cards .cont_card .date{
+    text-align: right;
+}
