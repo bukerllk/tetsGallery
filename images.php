@@ -8,14 +8,14 @@ switch($request_method)
 {
 	case 'GET':
 			// Retrive Products
-	if(!empty($_GET["product_id"]))
+	if(!empty($_GET["user_id"]))
 	{
-		$image_id=intval($_GET["image_id"]);
-		return $API->GET($image_id);
+		$image_id=intval($_GET["user_id"]);
+		return $API->GET($user_id);
 	}
 	else
 	{
-		return $API->GET($image_id);
+		return $API->GET();
 	}
 	break;
 	case 'POST':
@@ -24,7 +24,7 @@ switch($request_method)
 	break;
 	case 'PUT':
 			// Update Product
-	$image_id=intval($_GET["image_id"]);
+	$image_id=intval($_GET["user_id"]);
 	return $API->PUT();
 	break;
 	case 'DELETE':

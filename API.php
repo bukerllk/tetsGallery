@@ -1,4 +1,5 @@
 <?php
+include("lib/DB.php");
 /**
 * Clase para consumir API Rest
 * Las operaciones soportadas son:
@@ -15,8 +16,11 @@
  * @author     	Eduard Russy 
  * @version 	1.0
  */
-class API{
+class API extends DB{
 
+	public function __construct(){
+
+	}
 
 	/**
 	 * Enviar parámetros a un servidor a través del protocolo HTTP (POST).
@@ -37,10 +41,24 @@ class API{
 	 *
 	 * @return JSON
 	 */
-	static function GET(){
-		
-	}
+	static function GET($user_id){
+		$result = array();
+		$query='select * from users where id='.$user_id;
+		$user=parent::consultar($query);
+		$result['user']=$user;
+		$query='select * from images where user_id='.$user_id;
+		$images=parent::consultar($query);
+		$i = 0; 
+		while ($fila = $images) {  
+			$result['images'][$i]['name']= $fila['name']; 
+			$result['images'][$i]['description']= $fila['description']; 
+			$result['images'][$i]['date']= $fila['date']; 
+			$result['images'][$i]['like']= $fila['like']; 
+			$i++; 
 
+		}
+		return json_encode($result);
+	}
 	/**
 	 * Consultar a un servidor a través del protocolo HTTP (DELETE).
 	 * Se utiliza para eliminar recursos en una API REST

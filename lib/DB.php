@@ -13,8 +13,9 @@
  * @version   1.0
  */
 class MySQL{
-  private $conexion; private $total_consultas;
-  public function MySQL(){ 
+  private $conexion; 
+  private $total_consultas;
+  public function __construct(){ 
     if(!isset($this->conexion)){
       $this->conexion = (mysql_connect("Servidor","usuario","password"))
       or die(mysql_error());
@@ -28,7 +29,7 @@ class MySQL{
       echo 'MySQL Error: ' . mysql_error();
       exit;
     }
-    return $resultado;
+    return mysql_fetch_rows($resultado);
   }
   public function fetch_array($consulta){
    return mysql_fetch_array($consulta);
