@@ -11,25 +11,25 @@ switch($request_method)
 	if(!empty($_GET["user_id"]))
 	{
 		$image_id=intval($_GET["user_id"]);
-		return $API->GET($user_id);
+		echo $API->GET($user_id);
 	}
 	else
 	{
-		return $API->GET();
+		echo $API->GET();
 	}
 	break;
 	case 'POST':
 	// Insert Product
-	return $API->POST();
+	echo $API->POST();
 	break;
 	case 'PUT':
 			// Update Product
 	$image_id=intval($_GET["user_id"]);
-	return $API->PUT();
+	echo $API->PUT();
 	break;
 	case 'DELETE':
 			// Delete Product
-	return $API->DELETE();
+	echo $API->DELETE();
 	break;
 	default:
 			// Invalid Request Method
