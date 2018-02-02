@@ -51,6 +51,7 @@ class API extends DB{
 		$i = 0; 
 		while ($fila = $images) {  
 			$result['images'][$i]['name']= $fila['name']; 
+			$result['images'][$i]['path']= $fila['path']; 
 			$result['images'][$i]['description']= $fila['description']; 
 			$result['images'][$i]['date']= $fila['date']; 
 			$result['images'][$i]['like']= $fila['like']; 
