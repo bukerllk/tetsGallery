@@ -14,4 +14,4 @@ Config /lib/DB.php
 -- FOR the FRONT
 --
 
-Config Url in js/app.js
+Config Url in front/js/app.js

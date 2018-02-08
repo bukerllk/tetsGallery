@@ -45,7 +45,6 @@ class API extends MySQL {
 	 */
 	static function GET($user_id){
 		$MySQL=new MySQL();
-
 		$result = array();
 		$query='SELECT * FROM users where id='.$user_id;
 		$user=$MySQL->getOne($query);
