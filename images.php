@@ -10,7 +10,7 @@ switch($request_method)
 			// Retrive Products
 	if(!empty($_GET["user_id"]))
 	{
-		$image_id=intval($_GET["user_id"]);
+		$user_id=intval($_GET["user_id"]);
 		echo $API->GET($user_id);
 	}
 	else

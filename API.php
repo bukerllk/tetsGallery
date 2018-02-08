@@ -1,5 +1,7 @@
 <?php
-include("lib/DB.php");
+
+require_once("lib/DB.php");
+
 /**
 * Clase para consumir API Rest
 * Las operaciones soportadas son:
@@ -16,7 +18,7 @@ include("lib/DB.php");
  * @author     	Eduard Russy 
  * @version 	1.0
  */
-class API extends DB{
+class API extends MySQL {
 
 	public function __construct(){
 
@@ -42,22 +44,16 @@ class API extends DB{
 	 * @return JSON
 	 */
 	static function GET($user_id){
-		$result = array();
-		$query='select * from users where id='.$user_id;
-		$user=parent::consultar($query);
-		$result['user']=$user;
-		$query='select * from images where user_id='.$user_id;
-		$images=parent::consultar($query);
-		$i = 0; 
-		while ($fila = $images) {  
-			$result['images'][$i]['name']= $fila['name']; 
-			$result['images'][$i]['path']= $fila['path']; 
-			$result['images'][$i]['description']= $fila['description']; 
-			$result['images'][$i]['date']= $fila['date']; 
-			$result['images'][$i]['like']= $fila['like']; 
-			$i++; 
+		$MySQL=new MySQL();
 
-		}
+		$result = array();
+		$query='SELECT * FROM users where id='.$user_id;
+		$user=$MySQL->getOne($query);
+		$result['user']=$user;
+		$query='SELECT * FROM images where user_id='.$user_id;
+		$images=$MySQL->getAll($query);
+		$result['images']=$images;
+		
 		return json_encode($result);
 	}
 	/**
