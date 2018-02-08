@@ -15,3 +15,8 @@ Config /lib/DB.php
 --
 
 Config Url in front/js/app.js
+--
+-- FOR the test online
+--
+
+http://wuaru.com/testGallery/front/
